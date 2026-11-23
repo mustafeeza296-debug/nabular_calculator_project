@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive calculator built with HTML, CSS, JavaScript and Bootstrap.">
+  <title>Nova Calculator</title>
+  <!-- Bootstrap is used because it is explicitly required by the internship brief. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell container-fluid">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Nova Calculator home">
+        <span class="brand-mark">N</span>
+        <span>NOVA<span class="brand-light">/CALC</span></span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> PRECISION MODE</span>
+    </header>
+
+    <section class="hero text-center">
+      <p class="eyebrow">YOUR EVERYDAY CALCULATION SPACE</p>
+      <h1>Numbers, <span>beautifully</span> simple.</h1>
+      <p class="hero-copy">A thoughtfully designed calculator for quick answers and clear thinking.</p>
+    </section>
+
+    <section class="calculator-wrap" aria-label="Calculator">
+      <div class="calculator-card">
+        <div class="calc-head">
+          <div>
+            <p class="screen-label">DISPLAY <span class="live-indicator">LIVE</span></p>
+            <p class="screen-hint" id="statusText" aria-live="polite">Ready for your next calculation</p>
+          </div>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">
+            <span id="themeIcon">☼</span>
+          </button>
+        </div>
+
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div class="expression" id="expression"> </div>
+          <div class="result" id="display" role="status">0</div>
+        </div>
+
+        <div class="utility-row">
+          <button class="utility-button" data-action="clear-entry" type="button">CE</button>
+          <button class="utility-button" data-action="clear" type="button">AC</button>
+          <button class="utility-button" data-action="backspace" type="button" aria-label="Backspace">⌫</button>
+          <button class="operator-button" data-operator="%" type="button" aria-label="Modulo">%</button>
+        </div>
+
+        <div class="keypad" id="keypad">
+          <button class="number-button" data-number="7" type="button">7</button>
+          <button class="number-button" data-number="8" type="button">8</button>
+          <button class="number-button" data-number="9" type="button">9</button>
+          <button class="operator-button" data-operator="/" type="button" aria-label="Divide">÷</button>
+
+          <button class="number-button" data-number="4" type="button">4</button>
+          <button class="number-button" data-number="5" type="button">5</button>
+          <button class="number-button" data-number="6" type="button">6</button>
+          <button class="operator-button" data-operator="*" type="button" aria-label="Multiply">×</button>
+
+          <button class="number-button" data-number="1" type="button">1</button>
+          <button class="number-button" data-number="2" type="button">2</button>
+          <button class="number-button" data-number="3" type="button">3</button>
+          <button class="operator-button" data-operator="-" type="button" aria-label="Subtract">−</button>
+
+          <button class="number-button zero-button" data-number="0" type="button">0</button>
+          <button class="number-button" data-action="decimal" type="button">.</button>
+          <button class="operator-button" data-operator="+" type="button" aria-label="Add">+</button>
+          <button class="sqrt-button" data-action="sqrt" type="button" aria-label="Square root">√</button>
+          <button class="equals-button" data-action="equals" type="button">=</button>
+        </div>
+
+        <div class="calc-foot">
+          <span><kbd>Enter</kbd> calculate</span>
+          <span><kbd>Esc</kbd> clear</span>
+          <span><kbd>⌫</kbd> delete</span>
+        </div>
+      </div>
+      <p class="under-card-note"><span>✦</span> Supports whole numbers, decimals and keyboard input</p>
+    </section>
+
+    <footer class="page-footer">
+      <span>DESIGNED TO MAKE EVERY NUMBER COUNT</span>
+      <span>HTML · CSS · JAVASCRIPT · BOOTSTRAP</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
